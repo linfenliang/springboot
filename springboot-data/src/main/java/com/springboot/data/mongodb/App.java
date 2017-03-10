@@ -20,7 +20,7 @@ public class App implements CommandLineRunner{
 	@Override
 	public void run(String... arg0) throws Exception {
 		System.out.println(service);
-		System.out.println(service.getTotalCount("123"));
+		System.out.println(service.getCount());
 	}
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(App.class, args);

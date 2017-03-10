@@ -21,9 +21,8 @@ public class VehicleOnlineDataService {
 	@Autowired
 	private VehicleOnlineDataRepository repository;
 	
-	public Long getTotalCount(String vehicleId){
-		System.out.println(repository);
-		Long count = repository.countByVehicleId(vehicleId);
+	public Long getCount(){
+		Long count = repository.count();
 		return count;
 	}
 }

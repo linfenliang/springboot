@@ -26,7 +26,6 @@ public class VehicleOnlineDataController {
 	@RequestMapping("list")
 	@ResponseBody
 	public void showData(){
-		System.out.println(vehicleOnlineDataService);
-		System.out.println(vehicleOnlineDataService.getTotalCount("123"));
+		System.out.println(vehicleOnlineDataService.getCount());
 	}
 }
