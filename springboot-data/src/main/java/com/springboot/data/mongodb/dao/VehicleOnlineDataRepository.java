@@ -4,6 +4,8 @@
  */
 package com.springboot.data.mongodb.dao;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.springboot.data.mongodb.VehicleOnlineData;
@@ -16,7 +18,7 @@ import com.springboot.data.mongodb.VehicleOnlineData;
  */
 public interface VehicleOnlineDataRepository extends MongoRepository<VehicleOnlineData, String> {
 //CrudRepository<VehicleOnlineData, String>
-	Long countByVehicleId(String vehicleId);
-//	List<VehicleOnlineData> findByVehicleId(String vehicleId,Pageable pageable);
+//	Long countByVehicleId(String vehicleId);
+	List<VehicleOnlineData> findByVehicleId(String vehicleId);
 //	void saveData(VehicleOnlineData entity);
 }

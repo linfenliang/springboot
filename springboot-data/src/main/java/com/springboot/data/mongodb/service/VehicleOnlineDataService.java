@@ -4,9 +4,12 @@
  */
 package com.springboot.data.mongodb.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.springboot.data.mongodb.VehicleOnlineData;
 import com.springboot.data.mongodb.dao.VehicleOnlineDataRepository;
 
 /**
@@ -24,5 +27,11 @@ public class VehicleOnlineDataService {
 	public Long getCount(){
 		Long count = repository.count();
 		return count;
+	}
+	public List<VehicleOnlineData> findByVehicleId(String vehicleId){
+		return repository.findByVehicleId(vehicleId);
+	}
+	public VehicleOnlineData save(VehicleOnlineData entity){
+		return repository.save(entity);
 	}
 }

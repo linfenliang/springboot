@@ -5,7 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.springboot.data.mongodb.service.VehicleOnlineDataService;
+import com.springboot.data.mongodb.dao.VehicleOnlineDataRepository;
 
 /**
  * Hello world!
@@ -14,13 +14,13 @@ import com.springboot.data.mongodb.service.VehicleOnlineDataService;
 @SpringBootApplication
 public class App implements CommandLineRunner{
 	@Autowired
-	private VehicleOnlineDataService service;
-	
+	private VehicleOnlineDataRepository repository;
 	
 	@Override
 	public void run(String... arg0) throws Exception {
-		System.out.println(service);
-		System.out.println(service.getCount());
+		repository.deleteAll();
+		VehicleOnlineData v = repository.save(new VehicleOnlineData());
+		System.out.println(v.getId());
 	}
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(App.class, args);
