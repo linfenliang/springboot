@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.springboot.data.mongodb.VehicleOnlineData;
+import com.springboot.data.mongodb.domain.VehicleOnlineData;
 
 /**
  *

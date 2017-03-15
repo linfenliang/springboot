@@ -2,12 +2,16 @@
  * 版权信息：北京中宇恒信科技有限责任公司</br>
  * Copyright ©2007-2016. All rights reserved. 京ICP备08102035号
  */
-package com.springboot.data.mongodb;
+package com.springboot.data.mongodb.domain;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+import com.springboot.data.mongodb.common.domain.BaseEntity;
 
 /**
  *
@@ -16,11 +20,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @Date 2017年3月9日
  */
 @Document
-public class VehicleOnlineData {
+public class VehicleOnlineData extends BaseEntity{
 
 	@Id
-	private String id;
+	private BigInteger id;
 	private String vehicleId;
+	@Field("plateNo")//指定数据库存储字段
 	private String vehicleNo;
 	private Date gatherTime;
 	private Integer gpsSpeed;
@@ -40,10 +45,10 @@ public class VehicleOnlineData {
 	private Double humidometerProbe2;
 	private Double humidometerProbe3;
 	private Double humidometerProbe4;
-	public String getId() {
+	public BigInteger getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
 	public String getVehicleId() {

@@ -9,7 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.data.mongodb.VehicleOnlineData;
+import com.springboot.data.mongodb.domain.VehicleOnlineData;
 import com.springboot.data.mongodb.dao.VehicleOnlineDataRepository;
 
 /**
