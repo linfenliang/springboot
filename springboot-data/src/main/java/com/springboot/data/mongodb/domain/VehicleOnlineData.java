@@ -8,6 +8,7 @@ import java.math.BigInteger;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -23,10 +24,14 @@ import com.springboot.data.mongodb.common.domain.BaseEntity;
 public class VehicleOnlineData extends BaseEntity{
 
 	@Id
+	@Indexed
 	private BigInteger id;
+	@Indexed
 	private String vehicleId;
+	@Indexed
 	@Field("plateNo")//指定数据库存储字段
 	private String vehicleNo;
+	@Indexed
 	private Date gatherTime;
 	private Integer gpsSpeed;
 	private Double realLongitude;
@@ -37,14 +42,23 @@ public class VehicleOnlineData extends BaseEntity{
 	private Integer altitude;
 	private Integer accStatus;
 	private Double gForce;
-	private Double thermometerProbe1;
-	private Double thermometerProbe2;
-	private Double thermometerProbe3;
-	private Double thermometerProbe4;
+	private Integer thermometerProbe1;
+	private Integer thermometerProbe2;
+	private Integer thermometerProbe3;
+	private Integer thermometerProbe4;
 	private Double humidometerProbe1;
 	private Double humidometerProbe2;
 	private Double humidometerProbe3;
 	private Double humidometerProbe4;
+	@Indexed
+	private Date updateDate;
+	@Indexed
+	private Date createDate;
+	@Indexed
+	private String delFlag;
+	private String createBy;
+	private String updateBy;
+	private String remarks;
 	public BigInteger getId() {
 		return id;
 	}
@@ -123,28 +137,28 @@ public class VehicleOnlineData extends BaseEntity{
 	public void setgForce(Double gForce) {
 		this.gForce = gForce;
 	}
-	public Double getThermometerProbe1() {
+	public Integer getThermometerProbe1() {
 		return thermometerProbe1;
 	}
-	public void setThermometerProbe1(Double thermometerProbe1) {
+	public void setThermometerProbe1(Integer thermometerProbe1) {
 		this.thermometerProbe1 = thermometerProbe1;
 	}
-	public Double getThermometerProbe2() {
+	public Integer getThermometerProbe2() {
 		return thermometerProbe2;
 	}
-	public void setThermometerProbe2(Double thermometerProbe2) {
+	public void setThermometerProbe2(Integer thermometerProbe2) {
 		this.thermometerProbe2 = thermometerProbe2;
 	}
-	public Double getThermometerProbe3() {
+	public Integer getThermometerProbe3() {
 		return thermometerProbe3;
 	}
-	public void setThermometerProbe3(Double thermometerProbe3) {
+	public void setThermometerProbe3(Integer thermometerProbe3) {
 		this.thermometerProbe3 = thermometerProbe3;
 	}
-	public Double getThermometerProbe4() {
+	public Integer getThermometerProbe4() {
 		return thermometerProbe4;
 	}
-	public void setThermometerProbe4(Double thermometerProbe4) {
+	public void setThermometerProbe4(Integer thermometerProbe4) {
 		this.thermometerProbe4 = thermometerProbe4;
 	}
 	public Double getHumidometerProbe1() {
@@ -170,6 +184,42 @@ public class VehicleOnlineData extends BaseEntity{
 	}
 	public void setHumidometerProbe4(Double humidometerProbe4) {
 		this.humidometerProbe4 = humidometerProbe4;
+	}
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
+	public Date getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+	public String getDelFlag() {
+		return delFlag;
+	}
+	public void setDelFlag(String delFlag) {
+		this.delFlag = delFlag;
+	}
+	public String getCreateBy() {
+		return createBy;
+	}
+	public void setCreateBy(String createBy) {
+		this.createBy = createBy;
+	}
+	public String getUpdateBy() {
+		return updateBy;
+	}
+	public void setUpdateBy(String updateBy) {
+		this.updateBy = updateBy;
+	}
+	public String getRemarks() {
+		return remarks;
+	}
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
 	}
 
 

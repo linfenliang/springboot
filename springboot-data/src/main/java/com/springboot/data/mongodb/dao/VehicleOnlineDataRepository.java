@@ -4,9 +4,13 @@
  */
 package com.springboot.data.mongodb.dao;
 
+import java.util.Date;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
 import com.springboot.data.mongodb.domain.VehicleOnlineData;
 
@@ -20,5 +24,9 @@ public interface VehicleOnlineDataRepository extends MongoRepository<VehicleOnli
 //CrudRepository<VehicleOnlineData, String>
 //	Long countByVehicleId(String vehicleId);
 	List<VehicleOnlineData> findByVehicleId(String vehicleId);
+	Long countByVehicleId(String vehicleId);
+	@Query("{ 'vehicleId':?0, 'gatherTime': {$gte:?1,$lt:?2}}")
+	Page<VehicleOnlineData> findByVehicleIdAndGatherTimeRange(String vehicleId,Date gatherTimeBegin,Date gatherTimeEnd,Pageable pageable);
+	
 //	void saveData(VehicleOnlineData entity);
 }
