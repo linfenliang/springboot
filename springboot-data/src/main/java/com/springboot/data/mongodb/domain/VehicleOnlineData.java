@@ -8,7 +8,10 @@ import java.math.BigInteger;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.CompoundIndex;
+import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -21,6 +24,7 @@ import com.springboot.data.mongodb.common.domain.BaseEntity;
  * @Date 2017年3月9日
  */
 @Document
+@CompoundIndexes({@CompoundIndex(name="vehicleIdGatherTime_idx",def="{'vehicleId':1,gatherTime:1}")})
 public class VehicleOnlineData extends BaseEntity{
 
 	@Id
@@ -31,7 +35,6 @@ public class VehicleOnlineData extends BaseEntity{
 	@Indexed
 	@Field("plateNo")//指定数据库存储字段
 	private String vehicleNo;
-	@Indexed
 	private Date gatherTime;
 	private Integer gpsSpeed;
 	private Double realLongitude;

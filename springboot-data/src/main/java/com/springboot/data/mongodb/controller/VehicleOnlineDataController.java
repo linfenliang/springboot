@@ -41,7 +41,7 @@ public class VehicleOnlineDataController {
 		Date gatherTimeBegin = cal.getTime();
 		cal.add(Calendar.SECOND, 30);
 		Date gatherTimeEnd = cal.getTime();
-		Page<VehicleOnlineData> page = vehicleOnlineDataRepository.findByVehicleIdAndGatherTimeRange("98765432109876543210987654321032A", gatherTimeBegin, gatherTimeEnd,new PageRequest(0, 10,new Sort(Direction.DESC,"gatherTime")));
+//		Page<VehicleOnlineData> page = vehicleOnlineDataRepository.findByVehicleIdAndGatherTimeRange("98765432109876543210987654321032A", gatherTimeBegin, gatherTimeEnd,new PageRequest(0, 10,new Sort(Direction.DESC,"gatherTime")));
 
 		
 	}

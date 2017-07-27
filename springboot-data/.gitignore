@@ -1,3 +1,6 @@
 /logs/
 /target/
 /.settings/
+/.classpath
+/.project
+/.springBeans

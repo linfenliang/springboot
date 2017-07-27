@@ -15,7 +15,7 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<junit.version>4.10</junit.version>
+		<junit.version>4.12</junit.version>
 	</properties>
 	<!-- 设定主仓库，按设定顺序进行查找。 -->
 	<!-- <repositories>
