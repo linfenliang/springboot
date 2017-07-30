@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
@@ -72,7 +73,7 @@ public class VehicleOnlineDataService {
 		}
 		return null;
 	}
-//	@CachePut(value="vehicleOnlineDataList",keyGenerator = "keyGenerator")
+//	@CachePut(value="vehicleOnlineDataList",key = "#entity.toString()")
 	@CacheEvict(value="vehicleOnlineDataList",allEntries=true)
 	public void add(VehicleOnlineData entity){
 		logger.debug("add");
